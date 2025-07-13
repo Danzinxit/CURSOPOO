@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* :root define variáveis de cor para fácil customização */
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg-color: #2c2c2c;
+    --border-color: #444;
+    --text-color: #f0f0f0;
+    --primary-color: #ffd700; /* Dourado para um toque de campeonato */
+    --primary-color-rgb: 255, 215, 0;
+    --vs-color: #e74c3c;      /* Vermelho para o "vs" */
+    --winner-bg: rgba(255, 215, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Gradiente sutil para dar profundidade */
+    background: var(--bg-color) radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre os eventos de luta */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    /* Efeito de texto dourado com gradiente */
+    background: -webkit-linear-gradient(45deg, #ffd700, #f0c700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* O "card" que contém uma luta inteira */
+.fight-event {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Garante que os cantos arredondados sejam respeitados */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mensagem de "Luta MARCADA" ou "NÃO PODE ACONTECER" */
+.fight-event > p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.fight-event h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.fight-event h2 span {
+    color: var(--vs-color);
+    font-weight: 900;
+    margin: 0 15px;
+}
+
+/* Área que alinha os cards dos lutadores lado a lado */
+.presentation-area, .status-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.fighter-card, .status-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    flex: 1; /* Faz com que os cards ocupem o espaço igualmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default; /* Muda o cursor para indicar que não é clicável, mas pode ser interagido */
+}
+
+.fighter-card:hover, .status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4), 0 0 10px rgba(var(--primary-color-rgb), 0.5);
+}
+
+.result-area {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--winner-bg);
+    border: 1px solid var(--primary-color);
+    animation: pulse-gold 2s infinite;
+}
+
+.result-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+/* Animação para o card do vencedor */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0.4);
+    }
+    70% {
+        box-shadow: 0 0 10px 15px rgba(var(--primary-color-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-color-rgb), 0);
+    }
+}
+
+/* Design Responsivo para celulares */
+@media (max-width: 768px) {
+    body { padding: 15px; }
+    main { gap: 30px; }
+    h1 { font-size: 2rem; }
+    .fight-event h2 {
+        font-size: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .fight-event h2 span { margin: 0; }
+    .presentation-area, .status-area { flex-direction: column; gap: 15px; }
+}

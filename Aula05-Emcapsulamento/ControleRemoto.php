@@ -16,6 +16,7 @@ class ControleRemoto implements Controlador{
         $this->setLigado(false);
         $this->tocando = false;
        }
+       
        public function ligar()
        {
         $this->setLigado(true);
