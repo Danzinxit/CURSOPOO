@@ -1,11 +1,11 @@
 <?php
 //Classe Mãe 
-//Classe abstrata , nao pode gerar objetos ,tipo p1 = new Pessoa
+//Classe abstrata , nao pode gerar objetos ,tipo p1 = new Pessoa, somente usada em herança
 abstract class Pessoa{
-private $nome,$idade, $sexo;
+protected $nome,$idade, $sexo;
 
 
-public function fazerAniv(){
+public final function fazerAniv(){
 $this->idade ++;
 }
 
