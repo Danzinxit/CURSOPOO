@@ -18,6 +18,13 @@ private $corPena;
     public function fazerNinho(){
         echo"Construiu um ninho";
     }
+
+    public function getCorPena(){
+        return $this->corPena;
+    }
+    public function setCorPena($corPena){
+        $this->corPena = $corPena;
+    }
 }
 
 

@@ -15,6 +15,13 @@ private $corEscam;
         echo"Som de Reptil";
     }
     
+    public function getCorEscama(){
+        return $this->corEscama;
+    }
+    public function setCorEscama($corEscama){
+        $this->corEscama = $corEscama;
+    }
+    
 }
 
 
