@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animais</title>
 </head>
 <body>
 
@@ -30,11 +30,11 @@ $ar = new Arara;
 
 
 $m->setPeso(85.3);
-$p->setPeso(85.3);
-$a->setPeso(85.3);
-$r->setPeso(85.3);
-$c->setPeso(85.3);
-$ca->setPeso(85.3);
+$p->setPeso(66);
+$a->setPeso(88);
+$r->setPeso(100);
+$c->setPeso(44);
+$ca->setPeso(999);
 
 
 $a->fazerNinho();
