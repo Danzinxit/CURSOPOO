@@ -17,6 +17,9 @@ class Cachorro extends Mamifero{
 public function enterrarOsso(){
     echo "Enterrando Osso";
 }
+  public function emitirSom(){
+        echo"AU AU AU AU";
+    }
 }
 class Cobra extends Reptil{
 

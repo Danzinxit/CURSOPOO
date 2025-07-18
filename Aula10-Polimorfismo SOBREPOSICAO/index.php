@@ -39,8 +39,12 @@ $ca->setPeso(999);
 
 $a->fazerNinho();
 $a->emitirSom();
-
+$m->locomover();
 $m->setCorPelo("Roza");
+$c->locomover();
+$ca->locomover();//ira herdar da mae pq nao tem metodo
+$t->locomover();
+$ca->emitirSom();
 
 print_r($m);
 print_r($p);
