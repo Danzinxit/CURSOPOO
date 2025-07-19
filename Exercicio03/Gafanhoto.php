@@ -12,18 +12,6 @@ class Gafanhoto extends Pessoa{
        $this->totAssistido = 0;
      }
 
-
-
-
-
-
-
-
-
-
-
-
-
     public function viuMaisUm(){
         $this->totAssistido ++;
     }
@@ -31,7 +19,7 @@ class Gafanhoto extends Pessoa{
     public function getLogin(){
         return $this->login;
     }
-    public function getTotAssistindo(){
+    public function getTotAssistido(){
         return $this->totAssistido;
     }
 
@@ -41,13 +29,6 @@ class Gafanhoto extends Pessoa{
     public function setTotAssistido($totAssistido){
         $this->totAssistido = $totAssistido;
     }
-
-
-
-
-
-
-
 
 
 }
