@@ -4,7 +4,8 @@ require_once 'AcoesVideo.php';
 class Video implements AcoesVideo{ //IMPLEMENTS VEM DE AcoesVideo , porque ele e uma interface
 private $titulo, $avaliacao , $views , $curtidas , $reproduzindo;
 
-public function __construct($titulo){
+public function __construct($titulo){ /* O que acontece no __construct? Antes de qualquer outro método ser chamado, 
+                                      o construtor (__construct) é executado para inicializar o objeto. No seu código: */
 
     $this->titulo = $titulo;
     $this->avaliacao = 1;
