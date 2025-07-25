@@ -1,7 +1,7 @@
 <?php
 require_once 'AcoesVideo.php';
 
-class Video implements AcoesVideo{ //interface e implements
+class Video implements AcoesVideo{ //IMPLEMENTS VEM DE AcoesVideo , porque ele e uma interface
 private $titulo, $avaliacao , $views , $curtidas , $reproduzindo;
 
 public function __construct($titulo){
